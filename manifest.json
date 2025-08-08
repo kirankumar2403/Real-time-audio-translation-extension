@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Audio Capture & Transcription",
+  "version": "1.0",
+  "description": "Captures audio from browser tabs and transcribes it using Vosk",
+  "permissions": ["tabCapture", "activeTab", "storage", "tabs"],
+  "host_permissions": ["http://localhost:5000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["recorder.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
